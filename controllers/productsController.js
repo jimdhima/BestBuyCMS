@@ -3,13 +3,12 @@ const axios = require("axios");
 // Defining methods for the productsController
 module.exports = {
   findAll: function(req, res) {
-    if (req.query.q === "") {
-      req.query.q = "iphone";
-    }
+    let q = req.query.q || 'iphone'
+
     axios
       .get(
         `https://api.bestbuy.com/v1/products(longDescription=${
-          req.query.q
+          q
         }*)?format=json&apiKey=${process.env.BEST_BUY_API_KEY}`
       )
       .then(results => {
@@ -19,7 +18,7 @@ module.exports = {
       .catch(err => console.log(err));
   },
   findByClass: function(req, res) {
-    if (req.query.q === "") {
+    if (!req.query.q) {
       req.query.q = "mobile";
     }
     console.log("REQ CONTR: ", req.query.q);
