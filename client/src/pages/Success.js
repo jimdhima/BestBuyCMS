@@ -2,18 +2,16 @@ import React from "react";
 import { Col, Row, Container } from "../components/Grid";
 import Jumbotron from "../components/Jumbotron";
 
-const NoMatch = () => {
+const Success = () => {
   return (
     <Container fluid>
       <Row>
         <Col size="md-12">
           <Jumbotron>
-            <h1>404 Page Not Found</h1>
-            <h1>
-              <span role="img" aria-label="Face With Rolling Eyes Emoji">
-                🙄
-              </span>
-            </h1>
+            <h1>Success!</h1>
+            <h2>
+              Thank you for your purchase!
+            </h2>
           </Jumbotron>
         </Col>
       </Row>
@@ -21,4 +19,4 @@ const NoMatch = () => {
   );
 };
 
-export default NoMatch;
+export default Success;

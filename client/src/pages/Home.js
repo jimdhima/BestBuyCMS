@@ -1,10 +1,17 @@
-import React from 'react';
-import List from '../components/List';
+import React from "react";
+import { Row, Container } from "../components/Grid";
+import ProductList from "../components/ProductList";
+import CategoryMenu from "../components/CategoryMenu";
 
-export default function Home() {
-    return ( 
-        <div>
-            <List />
-        </div>
-    )
-}
+const Home = () => {
+  return (
+    <Container fluid>
+      <Row>
+        <CategoryMenu />
+        <ProductList />
+      </Row>
+    </Container>
+  );
+};
+
+export default Home;
